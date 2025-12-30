@@ -15,7 +15,7 @@ The library combines Python and C++ to maximize performance. Python manages the 
 To install the library, you need a C++ compiler supporting C++17 and OpenMP.
 
 ```bash
-pip install .
+pip install git+https://github.com/daandtu/graph-enumeration.git
 ```
 
 ### Usage
