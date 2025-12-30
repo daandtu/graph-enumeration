@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "graph-enumeration"
+authors = [
+    {name = "Luis Walter"},
+]
+description = ""
+readme = "README.md"
+version = "1.0.0"
+requires-python = ">=3.11"
+dependencies = [
+    "networkx",
+    "numpy",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[[tool.setuptools.ext-modules]]
+name = "graph_enumeration.EdgeGenerator"
+sources = [
+    "src/graph_enumeration/edge_generator/edge_generator_module.cpp",
+    "src/graph_enumeration/edge_generator/edge_generator.cpp",
+    "src/graph_enumeration/edge_generator/graph.cpp"
+]
+extra-compile-args = ["-O3", "-fopenmp", "-std=c++17"]
+extra-link-args = ["-fopenmp"]

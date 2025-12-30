@@ -1,0 +1,7 @@
+.vscode
+.venv
+.pytest_cache
+graph_enumeration.egg-info
+__pycache__
+*.so
+cache
