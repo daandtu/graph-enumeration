@@ -146,7 +146,9 @@ class GraphGenerator:
         self.nodes = nodes
         self.max_nodes = max_nodes
         self.min_nodes = min_nodes if min_nodes is not None else max_nodes
-        self.max_degree = max_degree if max_degree is not None else max_nodes - 1
+        self.max_degree = (
+            max_degree if max_degree is not None else max(max_nodes - 1, 1)
+        )
         self.min_degree = min_degree
         self.use_file_cache = file_cache_path is not None
         if self.use_file_cache:
